@@ -288,4 +288,61 @@ public class Main {
 ```
 
 ----------------------------------------------------------------------------------------------------
+<h3>Employee paartime emloyee Question</h3>
+<h4>Employee class code</h4>
 
+```bash
+public class Employee {
+	private String name;
+	private double salary;
+
+
+	
+	
+	public Employee(String Name, double Salary) {
+		this.name=Name;
+		this.salary=Salary;
+	}
+	
+	public void displayInfor() {
+		System.out.println(name);
+		System.out.println(salary);
+	}
+
+}
+```
+<h4>ParttimeEmployee class code</h4>
+
+```bash
+public class ParttimeEmployee extends Employee {
+	private int OTHrs;
+
+	public ParttimeEmployee(String Name, double Salary, int othrs) {
+		super(Name, Salary);
+		this.OTHrs=othrs;
+		
+	}
+	
+	public void displayEmpInfor() {
+		displayInfor();
+		System.out.println(OTHrs);
+	}
+
+}
+```
+<h4>EmpApp class code</h4>
+
+```bash
+public class EmpApp {
+
+	public static void main(String[] args) {
+		
+		ParttimeEmployee emp1= new ParttimeEmployee("Alice",2000.00,7);
+		ParttimeEmployee emp2= new ParttimeEmployee("yashmi",1000.00,8);
+		emp1.displayEmpInfor();
+		emp2.displayEmpInfor();
+
+	}
+
+}
+```
