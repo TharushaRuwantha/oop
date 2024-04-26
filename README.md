@@ -346,3 +346,112 @@ public class EmpApp {
 
 }
 ```
+
+----------------------------------------------------------------------------------------------------
+
+<h3>Vehicle / Car / Motorcycle  Question</h3>
+
+<h4>Vehicle class code</h4>
+
+```bash
+public class Vehicle {
+	String model;
+	double rentalPricePerDay;
+	
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public double getRentalPricePerDay() {
+		return rentalPricePerDay;
+	}
+
+	public void setRentalPricePerDay(double rentalPricePerDay) {
+		this.rentalPricePerDay = rentalPricePerDay;
+	}
+
+
+	
+	public Vehicle(String Model,double RentalPricePerDay) {
+		this.model = Model;
+		this.rentalPricePerDay = RentalPricePerDay;
+	}
+
+	
+	//method
+	public double calculateRentalCost(int days) {
+		return rentalPricePerDay * days;
+		
+	}
+}
+```
+
+<h4>Car class code</h4>
+
+```bash
+public class Car extends Vehicle {
+	
+	int numSeats;
+	
+	
+
+	public int getNumSeats() {
+		return numSeats;
+	}
+
+
+
+	public void setNumSeats(int numSeats) {
+		this.numSeats = numSeats;
+	}
+
+
+
+	public Car(String Model, double RentalPricePerDay,int numSeat) {
+		super(Model, RentalPricePerDay);
+		this.numSeats=numSeat;
+			
+	}
+
+}
+
+```
+
+<h4>Motorcycle class code</h4>
+
+```bash
+public class Motorcycle extends Vehicle {
+	int engineCapaity;
+
+	public Motorcycle(String Model, double RentalPricePerDay, int engineCapacity) {
+		super(Model, RentalPricePerDay);
+		this.engineCapaity=engineCapacity;
+		
+		
+	}
+
+}
+```
+<h4>main class code</h4>
+
+```bash
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Car c1 = new Car("Toyota",50.5,4);
+		Motorcycle m1 = new Motorcycle("Scooter",30.5,200);
+		
+		System.out.println(c1.calculateRentalCost(5));
+		System.out.println(m1.calculateRentalCost(2));
+
+	}
+
+}
+```
+
+
